@@ -8,9 +8,14 @@ export default class fetchApi {
     }
 
     async fetchApiUrl() {
-       const response = await fetch(`${URL}/?image_type=photo&orientation=horizontal&q=${this.valueImg}&page=${this.page}&per_page=12&key=${API}`);
-       const users = await response.json();
-       return users;
+        try {
+            const response = await fetch(`${URL}/?image_type=photo&orientation=horizontal&q=${this.valueImg}&page=${this.page}&per_page=12&key=${API}`);
+            const users = await response.json();
+            return users;
+        } catch (error) { 
+            console.log(error, 'goodbuy');
+        }
+       
     }
     
     set searchQuery(valueImg) {
@@ -22,11 +27,11 @@ export default class fetchApi {
     }
 
     increment() {
-       return this.page += 1;
+        this.page += 1;
     }
 
     reset() {
-        return this.page = 1;
+        this.page = 1;
     }
     
 }

@@ -1,0 +1,36 @@
+body {
+    text-align: center;
+
+    button,
+    input {
+        padding: 1rem;
+    }
+
+    .gallery {
+        padding: 0;
+
+        @media screen and(min-width:768px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        li {
+            @media screen and(min-width:768px) {
+                width: 20%;
+                margin-right: 3%;
+            }
+
+            list-style: none;
+
+            img {
+                width: 100%;
+            }
+
+            .stats {
+                display: flex;
+                justify-content: space-evenly;
+            }
+        }
+    }
+}
